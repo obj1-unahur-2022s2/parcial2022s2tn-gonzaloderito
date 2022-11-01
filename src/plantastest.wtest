@@ -1,18 +1,46 @@
 import plantas.*
-describe "Test de Plantas"  {
-	
-	const menta1 = new Menta()
-	
-	method initialize() {
-		menta1.valor(3)
-	}
-	
-	test "Menta - test de ejemplo" {
-		assert.equals(3, menta1.valor())
+const menta1 = new Menta(fechaDeLaSemilla = 2007, altura = 1, horasDeSol = 0)
+const menta2 = new Menta(fechaDeLaSemilla = 2007, altura = 0.3, horasDeSol = 0)
+const soja1 = new Soja(fechaDeLaSemilla = 2009, altura = 0.6, horasDeSol = 0)
+const sojatrans = new SojaTransgenica(fechaDeLaSemilla = 2009, altura = 0.6, horasDeSol = 0)
+const hierbabuena = new HierbaBuena(fechaDeLaSemilla = 2005, altura = 1, horasDeSol = 0)
 
+describe "una planta de menta que da semillas"{
+	test "Una menta de 1 metro que da semillas y ocupa 3 metros cuadrados"{
+		
+		assert.that(menta1.daSemillas())
+		assert.equals(3,menta1.espacioQueOcupa())
 	}
+}  
 	
+
+describe "una planta de menta que no da semillas"{
+	test "Una menta de 0.3 metro que da semillas y ocupa 0.9 metros cuadrados"{
+		
+		assert.notThat(menta2.daSemillas())
+		assert.equals(0.9,menta2.espacioQueOcupa())
+	}
+}  
+		
+describe "una planta de soja que da semillas y ocupa 0.3"{
+	test "una planta de soja no da semillas, tolera 7 horas de sol y ocupa 0.3 m2"{
+		
+		assert.notThat(soja1.daSemillas())
+		assert.equals(7,soja1.horasDeSol())
+		assert.equals(0.3,soja1.espacioQueOcupa())
+		
+	}
+}
+	
+describe "planta de soja transgenica no da semillas"{
+	test "la planta de soja transgenica no puede dar nuevas semillas "{
+		assert.notThat(sojatrans.daSemillas())
+	}
 }
 
-
+describe "planta de hierbabuena ocupa mas espacio "{
+	test " la planta de hierba buena ocupa el doble de espacio que una planta de menta normal"{
+		assert.equals(6, hierbabuena.espacioQueOcupa())
+	}
+}
 
