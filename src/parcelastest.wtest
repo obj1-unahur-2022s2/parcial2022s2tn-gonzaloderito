@@ -14,3 +14,13 @@ describe "agregamos una planta mas de la capacidad de la parcela"{
 		assert.throwsExceptionWithMessage("No se puede plantar una planta",parcela1.plantarUnaPLanta(soja3))
 	}
 }  
+
+describe "hay plantas con complicacines"{
+	test "si hay plantas con complicaciones en la parcela "{
+		
+		assert.that(parcela1.tieneComplicaciones())
+	}
+}  
+
+
+
