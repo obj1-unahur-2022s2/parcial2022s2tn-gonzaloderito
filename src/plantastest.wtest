@@ -1,9 +1,12 @@
+/*
+ * Corregí los test, le quité las horas de sol que eran innecesarias
+ */
 import plantas.*
-const menta1 = new Menta(fechaDeLaSemilla = 2007, altura = 1, horasDeSol = 0)
-const menta2 = new Menta(fechaDeLaSemilla = 2007, altura = 0.3, horasDeSol = 0)
-const soja1 = new Soja(fechaDeLaSemilla = 2009, altura = 0.6, horasDeSol = 0)
-const sojatrans = new SojaTransgenica(fechaDeLaSemilla = 2009, altura = 0.6, horasDeSol = 0)
-const hierbabuena = new HierbaBuena(fechaDeLaSemilla = 2005, altura = 1, horasDeSol = 0)
+const menta1 = new Menta(fechaDeLaSemilla = 2007, altura = 1)
+const menta2 = new Menta(fechaDeLaSemilla = 2007, altura = 0.3)
+const soja1 = new Soja(fechaDeLaSemilla = 2009, altura = 0.6)
+const sojatrans = new SojaTransgenica(fechaDeLaSemilla = 2009, altura = 0.6)
+const hierbabuena = new HierbaBuena(fechaDeLaSemilla = 2005, altura = 1)
 
 describe "una planta de menta que da semillas"{
 	test "Una menta de 1 metro que da semillas y ocupa 3 metros cuadrados"{

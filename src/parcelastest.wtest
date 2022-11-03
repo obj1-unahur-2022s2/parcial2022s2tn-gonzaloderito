@@ -1,12 +1,12 @@
 import parcelas.*
 import plantas.*
 
-const menta1 = new Menta(fechaDeLaSemilla = 2007, altura = 1, horasDeSol = 0)
-const menta2 = new Menta(fechaDeLaSemilla = 2007, altura = 0.3, horasDeSol = 0)
-const soja3 = new Soja(fechaDeLaSemilla = 2009, altura = 2, horasDeSol = 9)
-const sojatrans = new SojaTransgenica(fechaDeLaSemilla = 2009, altura = 0.6, horasDeSol = 0)
-const hierbabuena = new HierbaBuena(fechaDeLaSemilla = 2005, altura = 1, horasDeSol = 0)
-const parcela1 = new Parcela(ancho = 20, largo = 1, horasDeSolDeParcela = 8, plantasDeLaParcela =[soja3,soja3,soja3,soja3] )
+const menta1 = new Menta(fechaDeLaSemilla = 2007, altura = 1)
+const menta2 = new Menta(fechaDeLaSemilla = 2007, altura = 0.3)
+const soja3 = new Soja(fechaDeLaSemilla = 2009, altura = 2)
+const sojatrans = new SojaTransgenica(fechaDeLaSemilla = 2009, altura = 0.6)
+const hierbabuena = new HierbaBuena(fechaDeLaSemilla = 2005, altura = 1)
+const parcela1 = new ParcelaEcologica(ancho = 20, largo = 1, horasDeSolDeParcela = 8, plantasDeLaParcela =[soja3,soja3,soja3,soja3] )
 
 describe "agregamos una planta mas de la capacidad de la parcela"{
 	test "agregamos a la parcela una quinta planta y al superar la capacidad tirara un error "{
