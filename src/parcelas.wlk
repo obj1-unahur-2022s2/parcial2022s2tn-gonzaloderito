@@ -1,3 +1,7 @@
+/*
+ * El archivo no compilaba mismatched input '<EOF>' expecting '}'
+ * En plantarUnaPlanta(unaPlanta) el add() debería estar luego de la comprobación y recordar que lanzar una exepcion corta el flujo del método
+ */
 import plantas.*
 
 class Parcela {
@@ -15,10 +19,11 @@ class Parcela {
 	
 	
 	method plantarUnaPlanta(unaPlanta){
-		plantasDeLaParcela.add(unaPlanta)
-		if(self.cantidadMaxima() < plantasDeLaParcela.size() || horasDeSolDeParcela + 2 < unaPlanta.horasDeSol() ){
+		
+		if(self.cantidadMaxima() == plantasDeLaParcela.size() || horasDeSolDeParcela + 2 <= unaPlanta.horasDeSol() ){
 			self.error("No se puede plantar una planta")
 		}
+		plantasDeLaParcela.add(unaPlanta)
 	}
 	
 	method noHayPlantasMayorAUnMetroYMedio() = plantasDeLaParcela.all({p => p.altura() < 1.5})
@@ -43,8 +48,7 @@ object inta {
 	method promedioDePlantasPorParela() = self.sumaPlantasPorParcela() / parcelas.size()
 	method parcelasConMasDeCuatroPlantas() = parcelas.filter({p => p.plantasDeLaParcela().size() > 4})
 	method masAutoSustentable() = self.parcelasConMasDeCuatroPlantas().max({p => p.cantidadPlantasBienAsociadas()})
-	
-
+}
 
 
 
